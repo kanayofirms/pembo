@@ -32,6 +32,7 @@
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="email" name="email" class="form-control" id="yourEmail" required>
+                        <span style="color: red;">{{ $errors->first('email') }}</span>
                         <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
 
@@ -40,6 +41,8 @@
                 <div class="col-12">
                     <label for="yourPassword" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="yourPassword" required>
+                    <span style="color: red;">{{ $errors->first('password') }}</span>
+
                     <div class="invalid-feedback">Please enter your password!</div>
                 </div>
 
