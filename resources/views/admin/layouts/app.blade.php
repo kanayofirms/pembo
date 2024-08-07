@@ -38,7 +38,12 @@
     @include('admin.layouts._header')
     @include('admin.layouts._sidebar')
 
-    @yield('content')
+    <main id="main" class="main" style="min-height: 100vh;">
+
+        @yield('content')
+
+    </main><!-- End #main -->
+
 
     @include('admin.layouts._footer')
 
