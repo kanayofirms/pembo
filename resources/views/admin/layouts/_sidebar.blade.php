@@ -10,6 +10,12 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('admin/staff/list') }}">
+                <i class="bi bi-person"></i>
+                <span>Staff</span>
+            </a>
+        </li><!-- End Staff Page Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="">
