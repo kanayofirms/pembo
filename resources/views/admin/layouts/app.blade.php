@@ -35,12 +35,12 @@
 
 <body>
 
-    @include('_header')
-    @include('_sidebar')
+    @include('admin.layouts._header')
+    @include('admin.layouts._sidebar')
 
     @yield('content')
 
-    @include('_footer')
+    @include('admin.layouts._footer')
 
     <!-- Vendor JS Files -->
     <script src="{{ url('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
