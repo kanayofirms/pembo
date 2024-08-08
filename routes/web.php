@@ -24,4 +24,6 @@ Route::group(['middleware' => 'staff'], function () {
     Route::get('staff/dashboard', [DashboardController::class, 'index']);
 });
 
+Route::get('logout', [AuthController::class, 'logout']);
+
 
