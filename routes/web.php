@@ -14,6 +14,14 @@ Route::get('register', [AuthController::class, 'register']);
 Route::post('register_post', [AuthController::class, 'register_post']);
 Route::get('forgot_password', [AuthController::class, 'forgot_password']);
 
-Route::get('admin/dashboard', [DashboardController::class, 'index']);
-Route::get('admin/staff/list', [StaffController::class, 'index']);
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('admin/dashboard', [DashboardController::class, 'index']);
+    Route::get('admin/staff/list', [StaffController::class, 'index']);
+});
+
+Route::group(['middleware' => 'staff'], function () {
+    Route::get('staff/dashboard', [DashboardController::class, 'index']);
+});
+
 
