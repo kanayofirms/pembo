@@ -14,14 +14,14 @@
                 <p class="text-center small">Enter your email & password to login</p>
             </div>
 
-            <form class="row g-3 needs-validation" novalidate method="post" action="">
-
+            <form class="row g-3 needs-validation" novalidate method="post" action="{{ url('login_post') }}">
+                {{ csrf_field() }}
                 <div class="col-12">
                     <label for="yourUsername" class="form-label">Email</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
+                        <input type="email" name="email" class="form-control" id="yourUsername" required>
+                        <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
                 </div>
 
