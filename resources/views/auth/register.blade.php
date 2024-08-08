@@ -17,13 +17,17 @@
                 {{ csrf_field() }}
                 <div class="col-12">
                     <label for="yourName" class="form-label">First Name</label>
-                    <input type="text" name="name" class="form-control" id="yourName" required>
-                    <div class="invalid-feedback">Please, enter your first name!</div>
+                    <input type="text" name="name" class="form-control" id="yourName" value="{{ old('name') }}"
+                        required>
+                    <div class="invalid-feedback">Please,
+                        enter your first name!
+                    </div>
                 </div>
 
                 <div class="col-12">
                     <label for="yourUsername" class="form-label">Last Name</label>
-                    <input type="text" name="last_name" class="form-control" id="yourLastName" required>
+                    <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}"
+                        id="yourLastName" required>
                     <div class="invalid-feedback">Please, enter your last name!</div>
                 </div>
 
@@ -31,8 +35,10 @@
                     <label for="yourEmail" class="form-label">Email</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" name="email" class="form-control" id="yourEmail" required>
-                        <span style="color: red;">{{ $errors->first('email') }}</span>
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="yourEmail"
+                            required>
+                        <span style="color:
+                    red;">{{ $errors->first('email') }}</span>
                         <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
 
