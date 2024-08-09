@@ -20,6 +20,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/staff/list', [StaffController::class, 'index']);
     Route::get('admin/staff/add', [StaffController::class, 'add']);
     Route::post('admin/staff/add', [StaffController::class, 'add_post']);
+    Route::get('admin/staff/delete/{id}', [StaffController::class, 'staff_delete']);
 });
 
 Route::group(['middleware' => 'staff'], function () {
