@@ -18,6 +18,7 @@ Route::get('forgot_password', [AuthController::class, 'forgot_password']);
 Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index']);
     Route::get('admin/staff/list', [StaffController::class, 'index']);
+    Route::get('admin/staff/add', [StaffController::class, 'add']);
 });
 
 Route::group(['middleware' => 'staff'], function () {
