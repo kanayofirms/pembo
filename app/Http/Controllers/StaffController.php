@@ -48,7 +48,9 @@ class StaffController extends Controller
     public function staff_delete(Request $request, $id)
     {
         $getRecordDelete = User::getSingle($id);
-        $getRecordDelete->delete();
+        $getRecordDelete->is_delete = 1;
+        $getRecordDelete->save();
+        // $getRecordDelete->delete();
 
         return redirect()->back()->with('error', "Record successfully deleted.");
     }
