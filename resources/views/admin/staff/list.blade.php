@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a class="btn btn-primary">Add Staff</a>
+                            <a href="{{ url('admin/staff/add') }}" class="btn btn-primary">Add Staff</a>
                         </h5>
 
                         <!-- Table with stripped rows -->
