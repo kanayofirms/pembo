@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/upload/profile
 /storage/*.key
 /vendor
 .env
