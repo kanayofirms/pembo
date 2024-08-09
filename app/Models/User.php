@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return self::get();
     }
+
+    static public function getSingle($id)
+    {
+        return self::find($id);
+    }
 }
