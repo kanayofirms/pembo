@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     static public function getAllRecord()
     {
-        return self::get();
+        return self::where('is_delete', '=', 0)->get();
     }
 
     static public function getSingle($id)
