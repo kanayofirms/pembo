@@ -54,4 +54,10 @@ class StaffController extends Controller
 
         return redirect()->back()->with('error', "Record successfully deleted.");
     }
+
+    public function staff_edit(Request $request, $id)
+    {
+        $data['getRecord'] = User::getSingle($id);
+        return view('admin.staff.edit', $data);
+    }
 }
