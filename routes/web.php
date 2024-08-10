@@ -21,6 +21,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/staff/add', [StaffController::class, 'add']);
     Route::post('admin/staff/add', [StaffController::class, 'add_post']);
     Route::get('admin/staff/edit/{id}', [StaffController::class, 'staff_edit']);
+    Route::post('admin/staff/edit/{id}', [StaffController::class, 'staff_edit_update']);
     Route::get('admin/staff/delete/{id}', [StaffController::class, 'staff_delete']);
 });
 
