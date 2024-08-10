@@ -24,6 +24,13 @@ class StaffController extends Controller
     {
         // dd($request->all());
 
+        $save = request()->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required|unique:users',
+            'is_role' => 'required',
+        ]);
+
         $save = new User;
         $save->name = trim($request->name);
         $save->last_name = trim($request->last_name);
@@ -40,6 +47,7 @@ class StaffController extends Controller
             $file->move('upload/profile/', $filename);
             $save->profile_image = $filename;
         }
+        $save->remember_token = Str::random(50);
         $save->save();
 
         return redirect('admin/staff/list')->with('success', "My Account Successfully Created.");
