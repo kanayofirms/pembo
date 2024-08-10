@@ -50,7 +50,7 @@ class User extends Authenticatable
         return self::where('is_delete', '=', 0)->get();
     }
 
-    static public function getSingle($id)
+    static public function getSingleUser($id)
     {
         return self::find($id);
     }
