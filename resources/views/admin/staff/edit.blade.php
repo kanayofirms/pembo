@@ -63,8 +63,11 @@
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Profile Image</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="file" id="formFile" name="profile_image">
-                                    <img src="{{ $getRecord->getProfileImage() }}" alt="Profile Image" height="100px"
-                                        width="100px">
+                                    @if (!empty($getRecord->profile_image))
+                                        <img src="{{ $getRecord->getProfileImage() }}" alt="Profile Image" height="100px"
+                                            width="100px">
+                                    @endif
+
                                 </div>
                             </div>
                             <div class="row mb-3">
