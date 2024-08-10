@@ -19,35 +19,43 @@
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">First Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="name">
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Last Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="last_name">
+                                    <input type="text" class="form-control" name="last_name"
+                                        value="{{ old('last_name') }}">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Surname</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="surname">
+                                    <input type="text" class="form-control" name="surname" value="{{ old('surname') }}"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email">
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                        required>
+                                    <span style="color: red;">{{ $errors->first('email') }}</span>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Phone Number</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="phone_number">
+                                    <input type="number" class="form-control" name="phone_number"
+                                        value="{{ old('phone_number') }}"
+                                        oninput="javascript: this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLenght);"
+                                        maxlength="10">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -68,11 +76,10 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Role</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select" name="is_role" aria-label="Default select example">
-                                        <option selected>Select Role Menu</option>
+                                    <select class="form-select" name="is_role" required>
+                                        <option value="">Select Role Menu</option>
                                         <option value="0">Staff</option>
                                         <option value="1">Admin</option>
-                                        <option value="3">Three</option>
                                     </select>
                                 </div>
                             </div>
