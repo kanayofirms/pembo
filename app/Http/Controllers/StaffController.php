@@ -53,6 +53,46 @@ class StaffController extends Controller
         return redirect('admin/staff/list')->with('success', "My Account Successfully Created.");
     }
 
+
+    public function staff_edit(Request $request, $id)
+    {
+        $data['getRecord'] = User::getSingleUser($id);
+        return view('admin.staff.edit', $data);
+    }
+
+    public function staff_edit_update(Request $request, $id)
+    {
+        $save = request()->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'is_role' => 'required',
+        ]);
+
+        $save = User::getSingleUser($id);
+        $save->name = trim($request->name);
+        $save->last_name = trim($request->last_name);
+        $save->surname = trim($request->surname);
+        $save->email = trim($request->email);
+        $save->phone_number = trim($request->phone_number);
+        $save->date_of_birth = trim($request->date_of_birth);
+        $save->is_role = trim($request->is_role);
+
+        if (!empty($request->file('profile_image'))) {
+            if (!empty($save->profile_image) && file_exists('upload/profile/' . $save->profile_image)) {
+                unlink('upload/profile/' . $save->profile_image);
+            }
+            $file = $request->file('profile_image');
+            $randomStr = Str::random(30);
+            $filename = $randomStr . '.' . $file->getClientOriginalExtension();
+            $file->move('upload/profile/', $filename);
+            $save->profile_image = $filename;
+        }
+        $save->remember_token = Str::random(50);
+        $save->save();
+
+        return redirect('admin/staff/list')->with('success', "My Account Successfully Updated.");
+    }
+
     public function staff_delete(Request $request, $id)
     {
         $getRecordDelete = User::getSingle($id);
@@ -63,9 +103,4 @@ class StaffController extends Controller
         return redirect()->back()->with('error', "Record successfully deleted.");
     }
 
-    public function staff_edit(Request $request, $id)
-    {
-        $data['getRecord'] = User::getSingle($id);
-        return view('admin.staff.edit', $data);
-    }
 }
