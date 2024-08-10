@@ -38,7 +38,7 @@
                                 <label for="inputText" class="col-sm-2 col-form-label">Surname</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="surname"
-                                        value="{{ $getRecord->surname }}">
+                                        value="{{ $getRecord->surname }}" required>
                                 </div>
                             </div>
 
@@ -46,8 +46,8 @@
                                             mb-3">
                                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email"
-                                        value="{{ $getRecord->email }}">
+                                    <input type="email" class="form-control" readonly name="email"
+                                        value="{{ $getRecord->email }}" required>
                                     <span style="color: red;">{{ $errors->first('email') }}</span>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Role</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select" name="is_role" aria-label="Default select example">
+                                    <select class="form-select" name="is_role" required>
                                         <option selected>Select Role Menu</option>
                                         <option {{ $getRecord->is_role == '0' ? 'selected' : '' }} value="0">Staff
                                         </option>
