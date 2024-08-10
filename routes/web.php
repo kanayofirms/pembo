@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoanTypesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -23,6 +24,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/staff/edit/{id}', [StaffController::class, 'staff_edit']);
     Route::post('admin/staff/edit/{id}', [StaffController::class, 'staff_edit_update']);
     Route::get('admin/staff/delete/{id}', [StaffController::class, 'staff_delete']);
+
+    //Loan Types
+    Route::get('admin/loan_types/list', [LoanTypesController::class, 'index']);
 });
 
 Route::group(['middleware' => 'staff'], function () {
