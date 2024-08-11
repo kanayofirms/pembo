@@ -38,6 +38,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     //Loan Plan
     Route::get('admin/loan_plan/list', [LoanPlanController::class, 'index']);
+    Route::get('admin/loan_plan/add', [LoanPlanController::class, 'add']);
 });
 
 Route::group(['middleware' => 'staff'], function () {
