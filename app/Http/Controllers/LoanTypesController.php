@@ -37,8 +37,21 @@ class LoanTypesController extends Controller
         return view('admin.loan_types.edit', $data);
     }
 
-    public function delete($id, Request $request)
+    public function update($id, Request $request)
     {
+
+        $save = LoanTypesModel::getSingle($id);
+        $save->type_name = trim($request->type_name);
+        $save->description = trim($request->description);
+        $save->save();
+
+        return redirect('admin/loan_types/list')->with('success', "Loan Types Successfully Updated.");
+    }
+
+    public function delete(
+        $id,
+        Request $request
+    ) {
         $recordDelete = LoanTypesModel::getSingle($id);
         $recordDelete->delete();
 
