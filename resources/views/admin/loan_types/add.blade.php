@@ -26,7 +26,7 @@
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Description</label>
                                 <div class="col-sm-10">
-                                    <textarea type="text" class="form-control" name="description" {{ old('description') }}></textarea>
+                                    <textarea type="text" class="form-control" name="description">{{ old('description') }}</textarea>
                                 </div>
                             </div>
 
