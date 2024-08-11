@@ -11,5 +11,8 @@ class LoanTypesModel extends Model
 
     protected $table = 'loan_types';
 
-
+    static public function getAllRecord()
+    {
+        return self::get();
+    }
 }
