@@ -30,4 +30,13 @@ class LoanTypesController extends Controller
 
         return redirect('admin/loan_types/list')->with('success', "Loan Types Successfully Created.");
     }
+
+    public function delete($id, Request $request)
+    {
+        $recordDelete = LoanTypesModel::getSingle($id);
+        $recordDelete->delete();
+
+        return redirect()->back()->with('success', "Record successfully deleted.");
+
+    }
 }
