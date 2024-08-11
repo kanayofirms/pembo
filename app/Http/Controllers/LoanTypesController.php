@@ -9,7 +9,8 @@ class LoanTypesController extends Controller
 {
     public function index()
     {
-        return view('admin.loan_types.list');
+        $data['getRecord'] = LoanTypesModel::getAllRecord();
+        return view('admin.loan_types.list', $data);
     }
 
     public function add()
