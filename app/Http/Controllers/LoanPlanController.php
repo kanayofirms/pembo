@@ -12,4 +12,9 @@ class LoanPlanController extends Controller
         $data['getRecord'] = LoanPlanModel::getAllRecord();
         return view('admin.loan_plan.list', $data);
     }
+
+    public function add()
+    {
+        return view('admin.loan_plan.add');
+    }
 }
