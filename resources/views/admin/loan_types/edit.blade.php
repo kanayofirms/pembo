@@ -13,20 +13,21 @@
                     <div class="card-body">
                         <h5 class="card-title">Loan Type</h5>
                         <!-- General Form Elements -->
-                        <form action="{{ url('admin/loan_types/edit') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/loan_types/edit/' . $getRecord->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Type Name</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="type_name"
-                                        value="{{ old('type_name') }}" required>
+                                        value="{{ $getRecord->type_name }}" required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Description</label>
                                 <div class="col-sm-10">
-                                    <textarea type="text" class="form-control" name="description" {{ old('description') }}></textarea>
+                                    <textarea type="text" class="form-control" name="description">{{ $getRecord->description }}</textarea>
                                 </div>
                             </div>
 
