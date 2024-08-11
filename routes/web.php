@@ -30,6 +30,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/loan_types/add', [LoanTypesController::class, 'add']);
     Route::post('/admin/loan_types/add', [LoanTypesController::class, 'store']);
     Route::get('admin/loan_types/edit/{id}', [LoanTypesController::class, 'edit']);
+    Route::post('admin/loan_types/edit/{id}', [LoanTypesController::class, 'update']);
     Route::get('admin/loan_types/delete/{id}', [LoanTypesController::class, 'delete']);
 });
 
