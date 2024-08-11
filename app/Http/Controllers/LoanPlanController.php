@@ -17,4 +17,16 @@ class LoanPlanController extends Controller
     {
         return view('admin.loan_plan.add');
     }
+
+    public function store(Request $request)
+    {
+        $save = new LoanPlanModel;
+        $save->months = trim($request->months);
+        $save->interest_percent = trim($request->interest_percent);
+        $save->penalty_rate = trim($request->penalty_rate);
+        $save->save();
+
+        return redirect('admin/loan_plan/list')->with('success', "Loan Plan Successfully Added.");
+    }
+
 }
