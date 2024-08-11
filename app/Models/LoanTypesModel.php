@@ -16,7 +16,7 @@ class LoanTypesModel extends Model
         return self::get();
     }
 
-    static public function getSingleUser($id)
+    static public function getSingle($id)
     {
         return self::find($id);
     }
