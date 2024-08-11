@@ -9,6 +9,7 @@ class LoanPlanController extends Controller
 {
     public function index()
     {
-        return view('admin.loan_plan.list');
+        $data['getRecord'] = LoanPlanModel::getAllRecord();
+        return view('admin.loan_plan.list', $data);
     }
 }
