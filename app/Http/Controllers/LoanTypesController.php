@@ -33,7 +33,8 @@ class LoanTypesController extends Controller
 
     public function edit($id, Request $request)
     {
-        return view('admin.loan_types.edit');
+        $data['getRecord'] = LoanTypesModel::getSingle($id);
+        return view('admin.loan_types.edit', $data);
     }
 
     public function delete($id, Request $request)
