@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\LoanModel;
+use App\Models\LoanTypesModel;
 
 class LoanController extends Controller
 {
@@ -22,6 +23,7 @@ class LoanController extends Controller
 
     public function create(Request $request)
     {
-        return view('admin.loan.create');
+        $data['getLoanTypes'] = LoanTypesModel::get();
+        return view('admin.loan.create', $data);
     }
 }
