@@ -67,7 +67,9 @@
                                 <label for="inputNumber" required class="col-sm-2 col-form-label">Email<span
                                         style="color: red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <input type="email" class="form-control" name="email"
+                                        value="{{ old('email') }}"><span
+                                        style="color: red;">{{ $errors->first('email') }}</span>
                                 </div>
                             </div>
 
