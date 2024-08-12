@@ -13,4 +13,12 @@ class LoanUserController extends Controller
     {
         return view('admin.loan_user.index');
     }
+    /**
+     * Show the form for creating a new resource.
+     */
+
+    public function create(Request $request)
+    {
+        return view('admin.loan_user.create');
+    }
 }
