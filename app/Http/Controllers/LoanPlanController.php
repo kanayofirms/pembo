@@ -29,4 +29,10 @@ class LoanPlanController extends Controller
         return redirect('admin/loan_plan/list')->with('success', "Loan Plan Successfully Added.");
     }
 
+    public function edit($id, Request $request)
+    {
+        $data['getRecord'] = LoanPlanModel::getSingle($id);
+        return view('admin.loan_plan.edit', $data);
+    }
+
 }
