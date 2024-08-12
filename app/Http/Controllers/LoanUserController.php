@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanUserModel;
 use Illuminate\Http\Request;
 
 class LoanUserController extends Controller
@@ -20,5 +21,34 @@ class LoanUserController extends Controller
     public function create(Request $request)
     {
         return view('admin.loan_user.create');
+    }
+    /**
+     * Store a newly created resource in storage.
+     */
+
+    public function store(Request $request)
+    {
+        $save = request()->validate([
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'email' => 'required|unique:loan_user',
+            'surname' => 'required',
+            'address' => 'required',
+            'contact' => 'required',
+            'bvn_id' => 'required',
+            'tax_id' => 'required'
+        ]);
+        $save = new LoanUserModel;
+        $save->first_name = trim($request->first_name);
+        $save->middle_name = trim($request->middle_name);
+        $save->surname = trim($request->surname);
+        $save->address = trim($request->address);
+        $save->contact = trim($request->contact);
+        $save->email = trim($request->email);
+        $save->bvn_id = trim($request->bvn_id);
+        $save->tax_id = trim($request->tax_id);
+        $save->save();
+
+        return redirect('admin/loan_user/list')->with('success', "Loan User Successfully Created.");
     }
 }
