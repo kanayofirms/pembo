@@ -33,8 +33,9 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="loan_types_id" required>
                                         <option value="">Select Loan Types</option>
-                                        <option value="0">Staff</option>
-                                        <option value="1">Admin</option>
+                                        @foreach ($getLoanTypes as $value_1)
+                                            <option value="{{ $value_1->id }}">{{ $value_1->type_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
