@@ -46,4 +46,12 @@ class LoanPlanController extends Controller
         return redirect('admin/loan_plan/list')->with('success', "Loan Plan Successfully Updated.");
     }
 
+    public function delete($id)
+    {
+        $recordDelete = LoanPlanModel::getSingle($id);
+        $recordDelete->delete();
+
+        return redirect()->back()->with('success', "Loan Plan successfully deleted.");
+    }
+
 }
