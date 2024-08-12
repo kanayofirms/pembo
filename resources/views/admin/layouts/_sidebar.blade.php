@@ -36,6 +36,14 @@
         </li><!-- End Staff Page Nav -->
 
         <li class="nav-item">
+            <a class="nav-link @if (Request::segment(2) == 'loan') @else collapsed @endif"
+                href="{{ url('admin/loan/list') }}">
+                <i class="bi bi-person"></i>
+                <span>Loan</span>
+            </a>
+        </li><!-- End Staff Page Nav -->
+
+        <li class="nav-item">
             <a class="nav-link collapsed" href="">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
