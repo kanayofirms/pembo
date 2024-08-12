@@ -6,6 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\LoanPlanController;
+use App\Http\Controllers\LoanController;
+
+
 
 
 
@@ -43,6 +46,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/loan_plan/edit/{id}', [LoanPlanController::class, 'edit']);
     Route::post('admin/loan_plan/edit/{id}', [LoanPlanController::class, 'update']);
     Route::get('admin/loan_plan/delete/{id}', [LoanPlanController::class, 'delete']);
+
+    //Loan
+    Route::get('admin/loan/list', [LoanController::class, 'index']);
 });
 
 Route::group(['middleware' => 'staff'], function () {
