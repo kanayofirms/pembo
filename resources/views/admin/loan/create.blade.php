@@ -18,10 +18,10 @@
                             {{ csrf_field() }}
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Username</label>
+                                <label class="col-sm-2 col-form-label">Borrower</label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="user_id" required>
-                                        <option value="">Select Username</option>
+                                        <option value="">Select Borrower</option>
                                         <option value="0">Staff</option>
                                         <option value="1">Admin</option>
                                     </select>
@@ -45,8 +45,11 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="loan_plan_id" required>
                                         <option value="">Select Loan Plan</option>
-                                        <option value="0">Staff</option>
-                                        <option value="1">Admin</option>
+                                        @foreach ($getLoanPlan as $value_2)
+                                            <option value="{{ $value_2->id }}">{{ $value_2->months }}
+                                                [ {{ $value_2->interest_percent . '% ' . $value_2->penalty_rate }} ]
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
