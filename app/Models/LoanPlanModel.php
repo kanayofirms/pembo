@@ -15,4 +15,9 @@ class LoanPlanModel extends Model
     {
         return self::get();
     }
+
+    static public function getSingle($id)
+    {
+        return self::find($id);
+    }
 }
