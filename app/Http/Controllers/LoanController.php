@@ -7,6 +7,7 @@ use App\Models\LoanModel;
 use App\Models\LoanTypesModel;
 use App\Models\LoanPlanModel;
 use App\Models\LoanUserModel;
+use App\Models\User;
 
 
 
@@ -27,6 +28,7 @@ class LoanController extends Controller
 
     public function create(Request $request)
     {
+        $data['getStaff'] = User::where('is_role', '=', '0')->where('is_delete', '=', '0')->get();
         $data['getLoanUser'] = LoanUserModel::get();
         $data['getLoanTypes'] = LoanTypesModel::get();
         $data['getLoanPlan'] = LoanPlanModel::get();
