@@ -22,8 +22,10 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="user_id" required>
                                         <option value="">Select Borrower</option>
-                                        <option value="0">Staff</option>
-                                        <option value="1">Admin</option>
+                                        @foreach ($getLoanUser as $value_0)
+                                            <option value="{{ $value_0->id }}">{{ $value_0->first_name }}
+                                                {{ $value_0->middle_name }} {{ $value_0->surname }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
