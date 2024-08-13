@@ -51,10 +51,10 @@
                                         <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
                                         <td>{{ date('d-m-Y', strtotime($value->updated_at)) }}</td>
                                         <td>
-                                            <a href="{{ url('admin/loan_plan/edit/' . $value->id) }}"
-                                                class="btn btn-success"><i class="bi bi-pencil-square"></i>
+                                            <a href="{{ url('admin/loan/edit/' . $value->id) }}" class="btn btn-success"><i
+                                                    class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="{{ url('admin/loan_plan/delete/' . $value->id) }}"
+                                            <a href="{{ url('admin/loan/delete/' . $value->id) }}"
                                                 onclick="return confirm('Are You Sure You Want To Delete?')"
                                                 class="btn btn-danger"><i class="bi bi-trash"></i>
                                             </a>
