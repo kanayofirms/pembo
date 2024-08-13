@@ -43,7 +43,7 @@
                                             {{ $value->getUserName->surname }}</th>
                                         <th>{{ $value->getStaffName->name }} {{ $value->getStaffName->last_name }}
                                             {{ $value->getStaffName->surname }}</th>
-                                        <th>{{ $value->loan_types_id }}</th>
+                                        <th>{{ $value->getLoanType->type_name }}</th>
                                         <th>{{ $value->loan_plan_id }}</th>
                                         <th>{{ $value->loan_amount }}</th>
                                         <th>{{ $value->purpose }}</th>
