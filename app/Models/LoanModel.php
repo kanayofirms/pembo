@@ -15,4 +15,9 @@ class LoanModel extends Model
     {
         return self::get();
     }
+
+    public function getUserName()
+    {
+        return $this->belongsTo(LoanUserModel::class, 'user_id');
+    }
 }
