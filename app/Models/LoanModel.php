@@ -10,4 +10,9 @@ class LoanModel extends Model
     use HasFactory;
 
     protected $table = 'loan';
+
+    static public function getAllRecord()
+    {
+        return self::get();
+    }
 }
