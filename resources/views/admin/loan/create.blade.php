@@ -31,12 +31,25 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Staff</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" name="staff_id" required>
+                                        <option value="">Select Staff</option>
+                                        @foreach ($getStaff as $value_1)
+                                            <option value="{{ $value_1->id }}">{{ $value_1->name }}
+                                                {{ $value_1->last_name }} {{ $value_1->surname }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Loan Types</label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="loan_types_id" required>
                                         <option value="">Select Loan Types</option>
-                                        @foreach ($getLoanTypes as $value_1)
-                                            <option value="{{ $value_1->id }}">{{ $value_1->type_name }}</option>
+                                        @foreach ($getLoanTypes as $value_2)
+                                            <option value="{{ $value_2->id }}">{{ $value_2->type_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -47,9 +60,9 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="loan_plan_id" required>
                                         <option value="">Select Loan Plan</option>
-                                        @foreach ($getLoanPlan as $value_2)
-                                            <option value="{{ $value_2->id }}">{{ $value_2->months }}
-                                                [ {{ $value_2->interest_percent . '% ' . $value_2->penalty_rate }} ]
+                                        @foreach ($getLoanPlan as $value_3)
+                                            <option value="{{ $value_3->id }}">{{ $value_3->months }}
+                                                [ {{ $value_3->interest_percent . '% ' . $value_3->penalty_rate }} ]
                                             </option>
                                         @endforeach
                                     </select>
