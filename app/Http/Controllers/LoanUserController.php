@@ -12,7 +12,8 @@ class LoanUserController extends Controller
      */
     public function index()
     {
-        return view('admin.loan_user.index');
+        $data['getRecord'] = LoanUserModel::getAllRecord();
+        return view('admin.loan_user.index', $data);
     }
     /**
      * Show the form for creating a new resource.
