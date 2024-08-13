@@ -55,6 +55,21 @@ class LoanController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     */
+
+    public function edit($id, Request $request)
+    {
+
+        $data['getStaff'] = User::where('is_role', '=', '0')->where('is_delete', '=', '0')->get();
+        $data['getLoanUser'] = LoanUserModel::get();
+        $data['getLoanTypes'] = LoanTypesModel::get();
+        $data['getLoanPlan'] = LoanPlanModel::get();
+        $data['getRecord'] = LoanModel::getSingle($id);
+        return view('admin.loan.edit', $data);
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
 
