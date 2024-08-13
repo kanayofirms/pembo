@@ -70,6 +70,24 @@ class LoanController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     */
+
+    public function update($id, Request $request)
+    {
+        $save = LoanModel::getSingle($id);
+        $save->user_id = trim($request->user_id);
+        $save->staff_id = trim($request->staff_id);
+        $save->loan_types_id = trim($request->loan_types_id);
+        $save->loan_plan_id = trim($request->loan_plan_id);
+        $save->loan_amount = trim($request->loan_amount);
+        $save->purpose = trim($request->purpose);
+
+        $save->save();
+        return redirect('admin/loan/list')->with('success', "New Loan Application successfully updated.");
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
 
