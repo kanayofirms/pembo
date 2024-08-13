@@ -18,8 +18,8 @@ class LoanController extends Controller
      */
     public function index()
     {
-
-        return view('admin.loan.index');
+        $data['getRecord'] = LoanModel::getAllRecord();
+        return view('admin.loan.index', $data);
     }
 
     /**
