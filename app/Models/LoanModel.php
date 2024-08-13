@@ -17,6 +17,11 @@ class LoanModel extends Model
         return self::get();
     }
 
+    static public function getSingle($id)
+    {
+        return self::find($id);
+    }
+
     public function getUserName()
     {
         return $this->belongsTo(LoanUserModel::class, 'user_id');
