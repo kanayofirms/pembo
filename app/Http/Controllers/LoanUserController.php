@@ -52,4 +52,16 @@ class LoanUserController extends Controller
 
         return redirect('admin/loan_user/list')->with('success', "Loan User Successfully Created.");
     }
+
+    /**
+     * Remove specified resource from storage.
+     */
+
+    public function destroy($id)
+    {
+        $recordDelete = LoanUserModel::getSingle($id);
+        $recordDelete->delete();
+
+        return redirect()->back()->with('success', "Record successfully deleted.");
+    }
 }
