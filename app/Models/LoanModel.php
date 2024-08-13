@@ -26,4 +26,9 @@ class LoanModel extends Model
     {
         return $this->belongsTo(User::class, 'staff_id');
     }
+
+    public function getLoanType()
+    {
+        return $this->belongsTo(LoanTypesModel::class, 'loan_types_id');
+    }
 }
