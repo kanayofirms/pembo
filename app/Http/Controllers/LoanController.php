@@ -53,4 +53,16 @@ class LoanController extends Controller
         $save->save();
         return redirect('admin/loan/list')->with('success', "New Loan Application successfully created.");
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+
+    public function destroy($id)
+    {
+        $recordDelete = LoanModel::getSingle($id);
+        $recordDelete->delete();
+
+        return redirect()->back()->with('success', "Record successfully deleted.");
+    }
 }
