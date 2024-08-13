@@ -44,7 +44,8 @@
                                         <th>{{ $value->getStaffName->name }} {{ $value->getStaffName->last_name }}
                                             {{ $value->getStaffName->surname }}</th>
                                         <th>{{ $value->getLoanType->type_name }}</th>
-                                        <th>{{ $value->loan_plan_id }}</th>
+                                        <th>{{ $value->getLoanPlan->months . ' [' . $value->getLoanPlan->interest_percent . '% ' . $value->getLoanPlan->penalty_rate . ']' }}
+                                        </th>
                                         <th>{{ $value->loan_amount }}</th>
                                         <th>{{ $value->purpose }}</th>
                                         <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
