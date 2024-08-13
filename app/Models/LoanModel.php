@@ -31,4 +31,9 @@ class LoanModel extends Model
     {
         return $this->belongsTo(LoanTypesModel::class, 'loan_types_id');
     }
+
+    public function getLoanPlan()
+    {
+        return $this->belongsTo(LoanPlanModel::class, 'loan_plan_id');
+    }
 }
