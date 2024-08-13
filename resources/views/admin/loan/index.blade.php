@@ -39,7 +39,8 @@
                                 @foreach ($getRecord as $value)
                                     <tr>
                                         <th>{{ $value->id }}</th>
-                                        <th>{{ $value->user_id }}</th>
+                                        <th>{{ $value->getUserName->first_name }} {{ $value->getUserName->middle_name }}
+                                            {{ $value->getUserName->surname }}</th>
                                         <th>{{ $value->staff_id }}</th>
                                         <th>{{ $value->loan_types_id }}</th>
                                         <th>{{ $value->loan_plan_id }}</th>
