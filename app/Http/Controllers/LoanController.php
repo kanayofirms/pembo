@@ -34,4 +34,23 @@ class LoanController extends Controller
         $data['getLoanPlan'] = LoanPlanModel::get();
         return view('admin.loan.create', $data);
     }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $save = new LoanModel;
+        $save->user_id = trim($request->user_id);
+        $save->staff_id = trim($request->staff_id);
+        $save->loan_types_id = trim($request->loan_types_id);
+        $save->loan_plan_id = trim($request->loan_plan_id);
+        $save->loan_amount = trim($request->loan_amount);
+        $save->purpose = trim($request->purpose);
+
+        $save->save();
+        return redirect('admin/loan/list')->with('success', "New Loan Application successfully created.");
+    }
 }
