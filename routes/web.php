@@ -52,6 +52,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/loan/list', [LoanController::class, 'index']);
     Route::get('admin/loan/add', [LoanController::class, 'create']);
     Route::post('admin/loan/add', [LoanController::class, 'store']);
+    Route::get('admin/loan/edit/{id}', [LoanController::class, 'edit']);
     Route::get('admin/loan/delete/{id}', [LoanController::class, 'destroy']);
 
     //Loan User
