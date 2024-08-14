@@ -16,4 +16,10 @@ class DashboardController extends Controller
             return view('admin.staff.list');
         }
     }
+
+    public function profile(Request $request)
+    {
+        $data['getRecord'] = User::find(Auth::user()->id);
+        return view('admin.profile.update', $data);
+    }
 }
