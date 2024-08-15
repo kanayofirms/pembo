@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LoanTypesModel;
 use App\Models\LoanPlanModel;
+use App\Models\LoanModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -18,7 +19,7 @@ class DashboardController extends Controller
             $data['getStaffandAdminCount'] = User::count();
             $data['getLoanTypeCount'] = LoanTypesModel::count();
             $data['getLoanPlanCount'] = LoanPlanModel::count();
-
+            $data['getLoanCount'] = LoanModel::count();
 
             return view('admin.dashboard.list', $data);
         } else if (Auth::user()->is_role == 0) { //staff authorization
