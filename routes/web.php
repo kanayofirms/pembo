@@ -64,6 +64,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     //Profile
     Route::get('admin/profile', [DashboardController::class, 'profile']);
+    Route::post('admin/profile/update', [DashboardController::class, 'update']);
 
 });
 
