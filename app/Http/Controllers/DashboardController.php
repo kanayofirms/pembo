@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Str;
+use Hash;
 
 class DashboardController extends Controller
 {
@@ -48,6 +49,10 @@ class DashboardController extends Controller
             $save->profile_image = $filename;
         }
         $save->remember_token = Str::random(50);
+
+        if (!empty($request->password)) {
+            $save->password = Hash::make($request->password);
+        }
         $save->save();
 
         return redirect('admin/profile')->with('success', "Profile Successfully Updated.");
