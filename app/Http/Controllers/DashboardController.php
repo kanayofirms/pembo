@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanTypesModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -14,6 +15,7 @@ class DashboardController extends Controller
     {
         if (Auth::user()->is_role == 1) { //admin authorization
             $data['getStaffandAdminCount'] = User::count();
+            $data['getLoanTypeCount'] = LoanTypesModel::count();
 
 
             return view('admin.dashboard.list', $data);
