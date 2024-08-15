@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Str;
 
 class DashboardController extends Controller
 {
@@ -21,5 +22,34 @@ class DashboardController extends Controller
     {
         $data['getRecord'] = User::find(Auth::user()->id);
         return view('admin.profile.update', $data);
+    }
+
+    public function update(Request $request)
+    {
+        $save = request()->validate([
+            'email' => 'required|unique:users,email,' . Auth::user()->id
+        ]);
+        $save = User::find(Auth::user()->id);
+        $save->name = trim($request->name);
+        $save->last_name = trim($request->last_name);
+        $save->surname = trim($request->surname);
+        $save->email = trim($request->email);
+        $save->phone_number = trim($request->phone_number);
+        $save->date_of_birth = trim($request->date_of_birth);
+
+        if (!empty($request->file('profile_image'))) {
+            if (!empty($save->profile_image) && file_exists('upload/profile/' . $save->profile_image)) {
+                unlink('upload/profile/' . $save->profile_image);
+            }
+            $file = $request->file('profile_image');
+            $randomStr = Str::random(30);
+            $filename = $randomStr . '.' . $file->getClientOriginalExtension();
+            $file->move('upload/profile/', $filename);
+            $save->profile_image = $filename;
+        }
+        $save->remember_token = Str::random(50);
+        $save->save();
+
+        return redirect('admin/profile')->with('success', "Profile Successfully Updated.");
     }
 }
