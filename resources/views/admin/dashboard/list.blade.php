@@ -25,16 +25,18 @@
 
                             <div class="card-body">
                                 <h5 class="card-title">Staff and Admin</h5>
+                                <a href="{{ url('admin/staff/list') }}">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $getStaffandAdminCount }}</h6>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $getStaffandAdminCount }}</h6>
-
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
@@ -45,15 +47,17 @@
                         <div class="card info-card revenue-card">
                             <div class="card-body">
                                 <h5 class="card-title">Loan Types</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-archive"></i>
+                                <a href="{{ url('admin/loan_types/list') }}">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-archive"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $getLoanTypeCount }}</h6>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $getLoanTypeCount }}</h6>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
@@ -64,15 +68,17 @@
                         <div class="card info-card revenue-card">
                             <div class="card-body">
                                 <h5 class="card-title">Loan Plan</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-aspect-ratio"></i>
+                                <a href="{{ url('admin/loan_plan/list') }}">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-aspect-ratio"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $getLoanPlanCount }}</h6>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $getLoanPlanCount }}</h6>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
@@ -83,16 +89,18 @@
                         <div class="card info-card sales-card">
                             <div class="card-body">
                                 <h5 class="card-title">Loan</h5>
+                                <a href="{{ url('admin/loan/list') }}">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-caret-up"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $getLoanCount }}</h6>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-caret-up"></i>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $getLoanCount }}</h6>
-
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
@@ -103,15 +111,17 @@
                         <div class="card info-card revenue-card">
                             <div class="card-body">
                                 <h5 class="card-title">Loan User</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
+                                <a href="{{ url('admin/loan_user/list') }}">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $getLoanUserCount }}</h6>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $getLoanUserCount }}</h6>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
