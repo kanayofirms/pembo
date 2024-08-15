@@ -55,8 +55,6 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $getLoanTypeCount }}</h6>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -75,12 +73,10 @@
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-archive"></i>
+                                        <i class="bi bi-aspect-ratio"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $getLoanPlanCount }}</h6>
-
-
                                     </div>
                                 </div>
                             </div>
