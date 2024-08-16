@@ -20,7 +20,7 @@ class StaffController extends Controller
         return view('admin.staff.add');
     }
 
-    public function add_post(Request $request)
+    public function store(Request $request)
     {
         // dd($request->all());
 
@@ -54,13 +54,13 @@ class StaffController extends Controller
     }
 
 
-    public function staff_edit(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $data['getRecord'] = User::getSingleUser($id);
         return view('admin.staff.edit', $data);
     }
 
-    public function staff_edit_update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $save = request()->validate([
             'name' => 'required',
@@ -93,7 +93,12 @@ class StaffController extends Controller
         return redirect('admin/staff/list')->with('success', "My Account Successfully Updated.");
     }
 
-    public function staff_delete(Request $request, $id)
+    public function view($id)
+    {
+        return view('admin.staff.view');
+    }
+
+    public function destroy(Request $request, $id)
     {
         $getRecordDelete = User::getSingleUser($id);
         $getRecordDelete->is_delete = 1;
