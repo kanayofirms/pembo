@@ -27,10 +27,11 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index']);
     Route::get('admin/staff/list', [StaffController::class, 'index']);
     Route::get('admin/staff/add', [StaffController::class, 'add']);
-    Route::post('admin/staff/add', [StaffController::class, 'add_post']);
-    Route::get('admin/staff/edit/{id}', [StaffController::class, 'staff_edit']);
-    Route::post('admin/staff/edit/{id}', [StaffController::class, 'staff_edit_update']);
-    Route::get('admin/staff/delete/{id}', [StaffController::class, 'staff_delete']);
+    Route::post('admin/staff/add', [StaffController::class, 'store']);
+    Route::get('admin/staff/edit/{id}', [StaffController::class, 'edit']);
+    Route::post('admin/staff/edit/{id}', [StaffController::class, 'update']);
+    Route::get('admin/staff/view/{id}', [StaffController::class, 'view']);
+    Route::get('admin/staff/delete/{id}', [StaffController::class, 'destroy']);
 
     //Loan Types
     Route::get('admin/loan_types/list', [LoanTypesController::class, 'index']);
