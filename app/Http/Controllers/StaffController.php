@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\StaffNewAccountCreateMail;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Str;
+use Hash;
+use File;
+use Mail;
 
 
 class StaffController extends Controller
@@ -29,6 +33,7 @@ class StaffController extends Controller
             'surname' => 'required',
             'email' => 'required|unique:users',
             'is_role' => 'required',
+            'password' => 'required'
         ]);
 
         $save = new User;
@@ -48,7 +53,13 @@ class StaffController extends Controller
             $save->profile_image = $filename;
         }
         $save->remember_token = Str::random(50);
+        $random_password = $request->password;
+        $save->password = Hash::make($random_password);
+
         $save->save();
+
+        $save->random_password = $random_password;
+        Mail::to($save->email)->send(new StaffNewAccountCreateMail($save));
 
         return redirect('admin/staff/list')->with('success', "My Account Successfully Created.");
     }
