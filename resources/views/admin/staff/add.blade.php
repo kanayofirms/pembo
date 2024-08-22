@@ -50,6 +50,18 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="inputEmail" class="col-sm-2 col-form-label">Password <span
+                                        style="color: red;">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password"
+                                        value="{{ old('password') }}" required>
+                                    <span style="color: red;">{{ $errors->first('password') }}</span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Phone Number</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name="phone_number"
