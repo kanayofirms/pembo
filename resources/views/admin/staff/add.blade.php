@@ -54,10 +54,11 @@
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name="phone_number"
                                         value="{{ old('phone_number') }}"
-                                        oninput="javascript: this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLenght);"
-                                        maxlength="10">
+                                        oninput="javascript: this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        maxlength="11">
                                 </div>
                             </div>
+
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Profile Image</label>
                                 <div class="col-sm-10">
