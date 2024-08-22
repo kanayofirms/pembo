@@ -58,8 +58,8 @@
                                 <div class="col-sm-10">
                                     <input type="number" required class="form-control" name="contact"
                                         value="{{ old('contact') }}"
-                                        oninput="javascript: this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLenght);"
-                                        maxlength="10">
+                                        oninput="javascript: this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        maxlength="11">
                                 </div>
                             </div>
 
