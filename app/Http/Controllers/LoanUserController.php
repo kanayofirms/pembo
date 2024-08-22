@@ -64,4 +64,9 @@ class LoanUserController extends Controller
 
         return redirect()->back()->with('success', "Record successfully deleted.");
     }
+
+    public function staff_loan_user(Request $request)
+    {
+        return view('admin.admin_staff.staff_loan_user');
+    }
 }
