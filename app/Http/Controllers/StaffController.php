@@ -95,7 +95,8 @@ class StaffController extends Controller
 
     public function view($id)
     {
-        return view('admin.staff.view');
+        $data['getRecord'] = User::getSingleUser($id);
+        return view('admin.staff.view', $data);
     }
 
     public function destroy(Request $request, $id)
