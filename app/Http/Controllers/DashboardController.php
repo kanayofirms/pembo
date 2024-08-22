@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
             return view('admin.dashboard.list', $data);
         } else if (Auth::user()->is_role == 0) { //staff authorization
-            return view('admin.staff.list');
+            return view('admin.admin_staff.dashboard');
         }
     }
 
