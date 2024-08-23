@@ -39,15 +39,15 @@
                                 @foreach ($getRecord as $value)
                                     <tr>
                                         <th>{{ $value->id }}</th>
-                                        <th>{{ $value->getUserName->first_name }} {{ $value->getUserName->middle_name }}
-                                            {{ $value->getUserName->surname }}</th>
-                                        <th>{{ $value->getStaffName->name }} {{ $value->getStaffName->last_name }}
-                                            {{ $value->getStaffName->surname }}</th>
-                                        <th>{{ $value->getLoanType->type_name }}</th>
-                                        <th>{{ $value->getLoanPlan->months . ' [' . $value->getLoanPlan->interest_percent . '% ' . $value->getLoanPlan->penalty_rate . ']' }}
-                                        </th>
-                                        <th>{{ $value->loan_amount }}</th>
-                                        <th>{{ $value->purpose }}</th>
+                                        <td>{{ $value->getUserName->first_name }} {{ $value->getUserName->middle_name }}
+                                            {{ $value->getUserName->surname }}</td>
+                                        <td>{{ $value->getStaffName->name }} {{ $value->getStaffName->last_name }}
+                                            {{ $value->getStaffName->surname }}</td>
+                                        <td>{{ $value->getLoanType->type_name }}</td>
+                                        <td>{{ $value->getLoanPlan->months . ' [' . $value->getLoanPlan->interest_percent . '% ' . $value->getLoanPlan->penalty_rate . ']' }}
+                                        </td>
+                                        <td>{{ $value->loan_amount }}</td>
+                                        <td>{{ $value->purpose }}</td>
                                         <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
                                         <td>{{ date('d-m-Y', strtotime($value->updated_at)) }}</td>
                                         <td>
