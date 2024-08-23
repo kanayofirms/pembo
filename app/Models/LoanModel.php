@@ -41,4 +41,14 @@ class LoanModel extends Model
     {
         return $this->belongsTo(LoanPlanModel::class, 'loan_plan_id');
     }
+
+    static public function getLoanStaff($staff_id)
+    {
+
+        return self::select('loan.*')
+            ->where('loan.staff_id', '=', $staff_id)
+            ->orderByDesc('loan.id')
+            ->get();
+
+    }
 }
