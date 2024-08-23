@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\LoanUserModel;
 use Illuminate\Http\Request;
+use App\Models\LoanModel;
+use Auth;
 
 class LoanUserController extends Controller
 {
@@ -67,6 +69,8 @@ class LoanUserController extends Controller
 
     public function staff_loan_user(Request $request)
     {
-        return view('admin.admin_staff.staff_loan_user');
+        // dd(Auth::user()->id);
+        $data['getRecord'] = LoanModel::getLoanStaff(Auth::user()->id);
+        return view('admin.admin_staff.staff_loan_user', $data);
     }
 }
