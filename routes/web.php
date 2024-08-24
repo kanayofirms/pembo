@@ -73,6 +73,7 @@ Route::group(['middleware' => 'staff'], function () {
     Route::get('staff/dashboard', [DashboardController::class, 'index']);
     Route::get('staff/loan_user/list', [LoanUserController::class, 'staff_loan_user']);
     Route::get('staff/loan_user/delete/{id}', [LoanUserController::class, 'loan_user_destroy']);
+    Route::get('staff/profile', [DashboardController::class, 'staff_profile']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
