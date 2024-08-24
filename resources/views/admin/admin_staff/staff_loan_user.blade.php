@@ -38,7 +38,7 @@
                                         <th>{{ $value->id }}</th>
                                         <td>{{ $value->name }} {{ $value->last_name }} {{ $value->surname }}</td>
                                         <td>{{ $value->type_name }}</td>
-                                        <td>{{ $value->loan_plan_id }}</td>
+                                        <td>{{ $value->months }}</td>
                                         <td>{{ $value->loan_amount }}</td>
                                         <td>{{ $value->purpose }}</td>
                                         <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
