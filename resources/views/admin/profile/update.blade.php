@@ -80,8 +80,8 @@
                             <div class="row mb-3">
                                 <label for="inputEmail" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password" value=""
-                                        required>(Leave Blank If You Are Not Changing The
+                                    <input type="password" class="form-control" name="password" value="">(Leave Blank
+                                    If You Are Not Changing The
                                     Password.)
                                     <span style="color: red;">{{ $errors->first('password') }}</span>
                                 </div>
