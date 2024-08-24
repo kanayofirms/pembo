@@ -45,7 +45,8 @@ class LoanModel extends Model
     static public function getLoanStaff($staff_id)
     {
 
-        return self::select('loan.*')
+        return self::select('loan.*', 'users.name', 'users.last_name', 'users.surname')
+            ->join('users', 'users.id', '=', 'loan.user_id')
             ->where('loan.staff_id', '=', $staff_id)
             ->orderByDesc('loan.id')
             ->get();
