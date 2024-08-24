@@ -73,4 +73,12 @@ class LoanUserController extends Controller
         $data['getRecord'] = LoanModel::getLoanStaff(Auth::user()->id);
         return view('admin.admin_staff.staff_loan_user', $data);
     }
+
+    public function loan_user_destroy($id)
+    {
+        $recordDelete = LoanModel::getSingle($id);
+        $recordDelete->delete();
+
+        return redirect()->back()->with('success', "Record successfully deleted.");
+    }
 }
