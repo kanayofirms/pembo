@@ -67,4 +67,9 @@ class DashboardController extends Controller
 
         return redirect('admin/profile')->with('success', "Profile Successfully Updated.");
     }
+
+    public function staff_profile(Request $request)
+    {
+        return view('admin.admin_staff.staff_profile');
+    }
 }
